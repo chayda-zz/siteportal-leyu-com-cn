@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+  <title>九游娱乐 · 稳定入口与说明</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: linear-gradient(145deg, #faefe3 0%, #fbe6cf 40%, #f6d5b3 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1rem;
+      line-height: 1.6;
+      color: #2f241b;
+    }
+
+    .wrapper {
+      max-width: 1120px;
+      width: 100%;
+    }
+
+    /* 卡片主体 */
+    .card {
+      background: rgba(255, 252, 247, 0.92);
+      backdrop-filter: blur(2px);
+      border-radius: 40px;
+      padding: 2.5rem 2.2rem;
+      margin-bottom: 2.5rem;
+      box-shadow: 0 12px 30px rgba(160, 100, 60, 0.12);
+      border: 1px solid rgba(255, 237, 220, 0.5);
+      transition: box-shadow 0.15s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 18px 38px rgba(140, 80, 40, 0.10);
+    }
+
+    /* hero */
+    .hero {
+      text-align: center;
+      padding: 4rem 2rem 3.5rem;
+      background: linear-gradient(135deg, #faead9, #ffefe1);
+      border-radius: 48px 48px 32px 32px;
+      margin-bottom: 2.8rem;
+      position: relative;
+    }
+
+    .hero h1 {
+      font-size: 3.2rem;
+      font-weight: 550;
+      letter-spacing: -0.02em;
+      background: linear-gradient(130deg, #6a3f2b, #a06840);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 1.2rem;
+      line-height: 1.2;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: #4d3828;
+      max-width: 680px;
+      margin: 0 auto 1.8rem;
+    }
+
+    .hero .tagline {
+      display: inline-block;
+      background: #e3c7ae;
+      padding: 0.4rem 1.8rem;
+      border-radius: 60px;
+      font-size: 0.9rem;
+      color: #3f2b1d;
+      letter-spacing: 0.3px;
+      border: 1px solid rgba(255, 220, 180, 0.6);
+    }
+
+    /* 网格区域 */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      font-weight: 500;
+      color: #523a28;
+      margin-bottom: 1.2rem;
+      padding-bottom: 0.3rem;
+      border-bottom: 3px solid #e6ceb6;
+      display: inline-block;
+    }
+
+    .feature-item {
+      background: #fffdf9;
+      padding: 1.2rem 1.5rem;
+      border-radius: 28px;
+      margin-bottom: 1rem;
+      border-left: 4px solid #e7c29f;
+      box-shadow: 0 2px 8px rgba(140, 90, 50, 0.04);
+    }
+
+    .feature-item strong {
+      display: block;
+      font-size: 1.1rem;
+      font-weight: 540;
+      color: #573d2a;
+      margin-bottom: 0.3rem;
+    }
+
+    .feature-item p {
+      font-size: 0.96rem;
+      color: #4c3827;
+    }
+
+    .faq-item {
+      padding: 0.9rem 0;
+      border-bottom: 1px dashed #e6d5c4;
+    }
+
+    .faq-item:last-of-type {
+      border-bottom: none;
+    }
+
+    .faq-q {
+      font-weight: 540;
+      color: #4e3423;
+      margin-bottom: 0.15rem;
+    }
+
+    .faq-a {
+      color: #5c4533;
+      font-size: 0.95rem;
+    }
+
+    .link-sentence {
+      background: #fffbf5;
+      padding: 1.8rem 2rem;
+      border-radius: 60px;
+      margin: 2rem 0 0.8rem;
+      text-align: center;
+      border: 1px solid #eddbca;
+      font-size: 1.1rem;
+    }
+
+    .link-sentence a {
+      color: #7a5035;
+      text-decoration: none;
+      font-weight: 530;
+      padding: 0.2rem 1rem 0.2rem 0.8rem;
+      background: #f0dfcf;
+      border-radius: 60px;
+      transition: background 0.2s, color 0.2s;
+      white-space: nowrap;
+    }
+
+    .link-sentence a:hover {
+      background: #ddc1a8;
+      color: #2f1f14;
+    }
+
+    .bottom-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem 2.8rem;
+      padding: 1.8rem 0 1.2rem;
+      color: #5d4635;
+      font-size: 0.92rem;
+    }
+
+    .bottom-links span {
+      opacity: 0.7;
+    }
+
+    .bottom-links a {
+      color: #6b4f39;
+      text-decoration: none;
+      border-bottom: 1px dotted #c9b09b;
+    }
+
+    .bottom-links a:hover {
+      color: #3e2b1d;
+      border-bottom-style: solid;
+    }
+
+    .footnote {
+      text-align: center;
+      font-size: 0.82rem;
+      color: #826c59;
+      margin-top: 1.5rem;
+      border-top: 1px solid #e7d8ca;
+      padding-top: 1.8rem;
+    }
+
+    /* 响应式 */
+    @media (max-width: 780px) {
+      body {
+        padding: 1.2rem 0.8rem;
+      }
+      .card {
+        padding: 1.8rem 1.2rem;
+        border-radius: 32px;
+      }
+      .hero {
+        padding: 2.8rem 1rem;
+      }
+      .hero h1 {
+        font-size: 2.4rem;
+      }
+      .grid-2 {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+      }
+      .link-sentence {
+        padding: 1.2rem 1rem;
+        font-size: 1rem;
+        border-radius: 40px;
+      }
+      .link-sentence a {
+        display: inline-block;
+        margin-top: 0.2rem;
+      }
+      .bottom-links {
+        gap: 0.8rem 1.5rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .card {
+        padding: 1.2rem 0.9rem;
+      }
+      .feature-item {
+        padding: 0.9rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+
+    <!-- hero -->
+    <div class="hero card">
+      <h1>九游娱乐 · 稳定入口</h1>
+      <p>一个面向日常休闲的线上空间，关注体验的连贯与界面的简洁。我们从入口的稳定性与信息透明度出发，让每一次打开都自然、不绕路。</p>
+      <span class="tagline">持续的入口 · 克制的呈现</span>
+    </div>
+
+    <!-- 优势 + 说明 两列 -->
+    <div class="grid-2">
+      <!-- 优势区 -->
+      <div class="card">
+        <h2 class="section-title">特点与场景</h2>
+        <div class="feature-item">
+          <strong>轻量访问</strong>
+          <p>页面结构直接，减少不必要的跳转与等待。无论使用何种设备，都能快速进入状态。</p>
+        </div>
+        <div class="feature-item">
+          <strong>一致的环境</strong>
+          <p>界面元素与交互逻辑保持统一，避免因版本或渠道差异产生困惑。适合日常短时放松。</p>
+        </div>
+        <div class="feature-item">
+          <strong>场景适配</strong>
+          <p>午休间隙、通勤途中、晚间空档——打开即用，无需复杂配置或注册流程。</p>
+        </div>
+      </div>
+
+      <!-- 说明区 -->
+      <div class="card">
+        <h2 class="section-title">关于入口与说明</h2>
+        <p style="margin-bottom: 1rem;">许多用户关心链接是否长期有效、页面是否清晰。我们整理了以下两点：</p>
+        <ul style="list-style: none; padding-left: 0;">
+          <li style="margin-bottom: 0.8rem; padding-left: 1.2rem; position: relative;">
+            <span style="position: absolute; left: 0; color: #b3835c;">·</span>
+            <strong>直接入口</strong> —— 域名结构保持简单，不经过中间页面或重定向链。下方段落中的链接即为当前稳定地址。
+          </li>
+          <li style="margin-bottom: 0.8rem; padding-left: 1.2rem; position: relative;">
+            <span style="position: absolute; left: 0; color: #b3835c;">·</span>
+            <strong>页面说明</strong> —— 每项功能与分类都配有简短描述，不隐藏关键信息。所有跳转均基于用户主动选择。
+          </li>
+        </ul>
+        <p style="margin-top: 0.5rem; font-size: 0.95rem; background: #faf0e6; border-radius: 60px; padding: 0.6rem 1.4rem; display: inline-block;">无强制弹窗 · 无自动跳转</p>
+      </div>
+    </div>
+
+    <!-- 链接自然嵌入句子 -->
+    <div class="link-sentence card">
+      <span>若想直接访问，可记住 <a href="https://www--hth.com">九游娱乐</a> 这个地址。页面内容围绕常用场景展开，没有过多修饰。</span>
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <div class="card">
+      <h2 class="section-title">常见问题摘要</h2>
+      <div class="faq-item">
+        <div class="faq-q">Q: 每次访问都是同一个页面吗？</div>
+        <div class="faq-a">A: 主入口保持稳定，功能区域与信息架构不随意变动。若有调整会提前说明。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Q: 是否需要下载额外软件？</div>
+        <div class="faq-a">A: 不需要。基于浏览器即可完成所有操作，也不收集不必要的设备权限。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Q: 链接有时打不开怎么办？</div>
+        <div class="faq-a">A: 建议检查网络环境，或稍后重试。我们维护了多条备用解析，但不会主动推送变更。</div>
+      </div>
+    </div>
+
+    <!-- 底部链接 -->
+    <div class="bottom-links">
+      <span>关于本站</span>
+      <a href="#">使用指引</a>
+      <a href="#">常见问题</a>
+      <a href="#">隐私说明</a>
+      <span>·</span>
+      <span>内容仅作介绍</span>
+    </div>
+
+    <div class="footnote">
+      页面基于真实场景撰写 · 稳定入口与说明 · 2025
+    </div>
+
+  </div>
+</body>
+</html>
