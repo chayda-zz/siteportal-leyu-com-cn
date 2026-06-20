@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.2, user-scalable=yes">
+    <title>查阅与对照 · FB体育</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #f3f9fb;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            color: #1f2e3b;
+            padding: 1.2rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .container {
+            max-width: 1080px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        /* 标题区 / hero 简洁叙事 */
+        .hero-note {
+            margin: 2.8rem 0 1.6rem;
+            border-left: 5px solid #39afa0;
+            padding-left: 1.2rem;
+        }
+        .hero-note h1 {
+            font-size: 2.2rem;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+            line-height: 1.25;
+            color: #0f3530;
+        }
+        .hero-note .subhead {
+            margin-top: 0.5rem;
+            font-size: 1.1rem;
+            color: #367a73;
+            font-weight: 340;
+            max-width: 640px;
+        }
+        /* 承接段落 — 日常查询场景 */
+        .scene-block {
+            background: #ffffffd6;
+            backdrop-filter: blur(1px);
+            padding: 1.8rem 2rem;
+            border-radius: 28px 12px 28px 12px;
+            box-shadow: 0 6px 18px rgba(33, 120, 110, 0.06);
+            margin: 2rem 0 2.4rem;
+            transition: box-shadow 0.2s;
+        }
+        .scene-block p {
+            margin-bottom: 1.1rem;
+            font-size: 1.02rem;
+        }
+        .scene-block p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* 特点网格卡片 — 对照 & 延伸 */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 1.6rem;
+            margin: 2.8rem 0;
+        }
+        .feature-card {
+            background: white;
+            border: 1px solid #cae3e0;
+            border-radius: 24px 8px 24px 8px;
+            padding: 1.8rem 1.2rem 1.6rem;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 10px rgba(57, 175, 160, 0.04);
+        }
+        .feature-card:hover {
+            border-color: #3cb3a3;
+            box-shadow: 0 8px 16px rgba(60, 179, 163, 0.10);
+            transform: translateY(-2px);
+        }
+        .feature-card .card-icon {
+            font-size: 1.6rem;
+            line-height: 1;
+            margin-bottom: 0.4rem;
+            color: #1f8576;
+        }
+        .feature-card h3 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin: 0.2rem 0 0.5rem;
+            color: #17544a;
+        }
+        .feature-card p {
+            color: #2d4d47;
+            font-size: 0.96rem;
+        }
+
+        /* 温和结尾 + 链接自然嵌入 */
+        .closing-wrap {
+            background: #e6f3f0;
+            border-radius: 40px 12px 40px 12px;
+            padding: 2rem 2.2rem;
+            margin: 2.2rem 0 2.8rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            gap: 0.4rem 0.6rem;
+        }
+        .closing-wrap p {
+            font-size: 1rem;
+            color: #1d4a43;
+            flex: 1 1 200px;
+        }
+        .closing-wrap a {
+            color: #0a5f54;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 2px solid #44b7a7;
+            padding-bottom: 1px;
+            transition: 0.15s;
+            white-space: nowrap;
+        }
+        .closing-wrap a:hover {
+            background: #44b7a7;
+            color: white;
+            border-bottom-color: #44b7a7;
+            padding: 0 3px;
+        }
+
+        /* FAQ 摘要 — 简短克制 */
+        .faq-mini {
+            background: white;
+            border-radius: 20px;
+            padding: 1.4rem 1.8rem 1.8rem;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.01);
+            margin: 2.2rem 0 1.8rem;
+        }
+        .faq-mini details {
+            margin-bottom: 0.6rem;
+            border-bottom: 1px dashed #bcd6d1;
+            padding-bottom: 0.6rem;
+        }
+        .faq-mini details:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        .faq-mini summary {
+            cursor: pointer;
+            font-weight: 480;
+            color: #1c6359;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+        .faq-mini summary::before {
+            content: "▹";
+            color: #3ab0a0;
+            font-size: 1.2rem;
+            line-height: 1;
+        }
+        .faq-mini details[open] summary::before {
+            content: "▾";
+        }
+        .faq-mini .faq-answer {
+            margin: 0.5rem 0 0.2rem 1.2rem;
+            font-size: 0.95rem;
+            color: #2d5550;
+        }
+
+        hr {
+            border: none;
+            border-top: 2px dotted #c2dbd6;
+            margin: 2.5rem 0 1rem;
+            opacity: 0.5;
+        }
+
+        .footer-note {
+            margin-top: auto;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #5a7b75;
+            padding: 1.2rem 0 0.2rem;
+        }
+
+        /* 移动端微调 */
+        @media (max-width: 540px) {
+            body {
+                padding: 1rem 0.9rem;
+            }
+            .hero-note h1 {
+                font-size: 1.8rem;
+            }
+            .scene-block {
+                padding: 1.5rem 1.2rem;
+            }
+            .feature-grid {
+                gap: 1rem;
+            }
+            .closing-wrap {
+                flex-direction: column;
+                padding: 1.6rem 1.4rem;
+            }
+            .faq-mini {
+                padding: 1rem 1.2rem 1.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 开场短句：日常里的一次对照 -->
+        <div class="hero-note">
+            <h1>翻阅、对照，<br>然后慢慢延伸。</h1>
+            <div class="subhead">体育资讯的角落，有时只需要一个安静的起点。</div>
+        </div>
+
+        <!-- 承接段落：从查询习惯说起 -->
+        <div class="scene-block">
+            <p>傍晚刷完比赛集锦，或者午休时想确认一下球队近况，很多人习惯打开搜索引擎，输入几个字母。这种日常查询看起来简单，但信息源是否清晰、更新够不够及时，往往会直接影响判断。最近我在整理一些联赛数据时，反复打开一个站点作为参照——说实话，它没有花哨的弹窗，也没有过度包装的推送，只是把比赛列表、实时比分和基础统计放在那里，简洁到几乎让人忽略，但每次对照下来反而最省时间。</p>
+            <p>后来慢慢发现，与其在不同页面之间来回跳转，不如固定一个信息结构相对干净的页面作为“查询基底”。<a href="https://cn-site-fbsports.com" style="color:#0a5f54; font-weight:500; border-bottom:1px solid #3db3a3; text-decoration:none;">FB体育</a> 就是我逐渐习惯的一个起点。它的首页不会一股脑塞满广告，也没有夸大的标题，而是把足球、篮球以及几个主流联赛的赛程、积分和关键数据平铺开来。如果你也经常需要快速核对某个比分或者轮次，或许可以把它收进书签夹，当作一张随时可翻的数据卡片。</p>
+        </div>
+
+        <!-- 特点列表：网格卡片，强调三个维度 -->
+        <div class="feature-grid">
+            <div class="feature-card">
+                <div class="card-icon">📋</div>
+                <h3>赛程对照</h3>
+                <p>按联赛、日期分组，主客队及场地清晰标注，适合赛前快速浏览或赛后复盘核对。</p>
+            </div>
+            <div class="feature-card">
+                <div class="card-icon">📊</div>
+                <h3>积分与数据</h3>
+                <p>积分榜、射手榜、助攻榜并列展示，每轮变动用差值标识，延伸阅读时一目了然。</p>
+            </div>
+            <div class="feature-card">
+                <div class="card-icon">🔗</div>
+                <h3>交叉延伸</h3>
+                <p>页面内嵌相关联赛入口与近期战报摘要，不需要额外搜索就能自然跳转查阅。</p>
+            </div>
+        </div>
+
+        <!-- 温和结尾：嵌入链接的叙述句 -->
+        <div class="closing-wrap">
+            <p>翻过几个赛季之后会发现，真正顺手的工具往往不在聚光灯下。日常查询、对照、延伸，这些细碎的动作拼起来，就是看球生活里安静而扎实的一部分。</p>
+            <p>如果你也习惯用简洁的页面整理信息，不妨试试 <a href="https://cn-site-fbsports.com">FB体育</a>，当作资料夹里一张稳妥的索引页。</p>
+        </div>
+
+        <!-- FAQ 摘要：简短实用，不啰嗦 -->
+        <div class="faq-mini">
+            <details>
+                <summary>这个站点覆盖哪些联赛？</summary>
+                <div class="faq-answer">主要包含欧洲五大联赛、欧冠、欧联，以及NBA、CBA等主流篮球联赛。部分二级联赛以列表形式呈现。</div>
+            </details>
+            <details>
+                <summary>更新速度如何？</summary>
+                <div class="faq-answer">比分和赛果通常在比赛结束后几分钟内更新；赛程则提前一到两轮发布。数据源相对稳定。</div>
+            </details>
+            <details>
+                <summary>移动端浏览体验怎么样？</summary>
+                <div class="faq-answer">页面没有强制缩放，列表适配手机屏幕，横竖屏切换后卡片布局会自动重排，查阅也算顺手。</div>
+            </details>
+        </div>
+
+        <hr>
+        <div class="footer-note">
+            <span>一种安静的查阅方式 · 没有多余的话</span>
+        </div>
+    </div>
+</body>
+</html>
