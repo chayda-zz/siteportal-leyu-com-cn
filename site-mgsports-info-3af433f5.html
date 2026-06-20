@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>满冠体育 · 简明指南</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #fafaf9;
+      color: #1e1e1e;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      line-height: 1.7;
+      padding: 2.5rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .page {
+      max-width: 680px;
+      width: 100%;
+    }
+
+    /* 开场区域 – 短句留白 */
+    .opening {
+      margin-bottom: 3rem;
+      border-top: 3px solid #d4d2cd;
+      padding-top: 2rem;
+    }
+
+    .opening p {
+      font-size: 1.1rem;
+      letter-spacing: 0.02em;
+      color: #3a3a38;
+      font-weight: 400;
+      max-width: 90%;
+    }
+
+    .opening .small-note {
+      margin-top: 1.2rem;
+      font-size: 0.85rem;
+      color: #7d7b76;
+      border-left: 2px solid #d4d2cd;
+      padding-left: 1rem;
+    }
+
+    /* 承接段落 */
+    .context {
+      margin-bottom: 3rem;
+    }
+
+    .context p {
+      margin-bottom: 1.2rem;
+      color: #2b2b28;
+    }
+
+    .context p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* 特点列表 – 极简卡片式 */
+    .features {
+      margin-bottom: 3.5rem;
+    }
+
+    .features h2 {
+      font-size: 1.15rem;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      color: #2f2f2b;
+      margin-bottom: 1.6rem;
+      border-bottom: 1px solid #e3e1db;
+      padding-bottom: 0.5rem;
+    }
+
+    .feature-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .feature-item {
+      background: #ffffff;
+      border: 1px solid #edebe6;
+      padding: 1.25rem 1.5rem;
+      border-radius: 4px;
+      transition: box-shadow 0.1s ease;
+    }
+
+    .feature-item:hover {
+      box-shadow: 0 1px 6px rgba(0,0,0,0.02);
+    }
+
+    .feature-item strong {
+      display: inline-block;
+      font-weight: 570;
+      font-size: 1rem;
+      color: #24241f;
+      margin-bottom: 0.35rem;
+      letter-spacing: 0.01em;
+    }
+
+    .feature-item p {
+      font-size: 0.96rem;
+      color: #4e4d48;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    /* 温和结尾 + 提醒 */
+    .closing {
+      margin-bottom: 3rem;
+      border-left: 3px solid #cac7c0;
+      padding-left: 1.4rem;
+    }
+
+    .closing p {
+      color: #3d3c37;
+      margin-bottom: 0.9rem;
+    }
+
+    .closing .reminder {
+      background-color: #f3f2ef;
+      padding: 1rem 1.3rem;
+      border-radius: 3px;
+      font-size: 0.92rem;
+      color: #3f3e39;
+      margin-top: 1.4rem;
+      border: 1px solid #e5e2db;
+      line-height: 1.7;
+    }
+
+    .reminder a {
+      color: #1e1e1e;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-color: #b7b3ab;
+      font-weight: 450;
+    }
+
+    .reminder a:hover {
+      text-decoration-color: #1e1e1e;
+    }
+
+    /* 底部静默 */
+    .footer-note {
+      font-size: 0.78rem;
+      color: #a5a29a;
+      text-align: left;
+      border-top: 1px solid #e3e1db;
+      padding-top: 1.8rem;
+      margin-top: 0.5rem;
+    }
+
+    .footer-note span {
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+
+    /* 响应式微调 */
+    @media (max-width: 480px) {
+      body {
+        padding: 1.8rem 1rem;
+      }
+      .opening p {
+        font-size: 1rem;
+      }
+      .feature-item {
+        padding: 1rem 1.2rem;
+      }
+      .closing {
+        padding-left: 1rem;
+      }
+    }
+
+    /* 纯粹的窄排版 */
+    img, svg {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- 开场短句 -->
+    <div class="opening">
+      <p>体育场地、器材与服务的安排，有时比一次训练本身更值得提前了解。</p>
+      <div class="small-note">—— 一份来自使用者的简明指南</div>
+    </div>
+
+    <!-- 承接段落 -->
+    <div class="context">
+      <p>
+        日常预定一块合适的场地、核对开放时段、确认装备清单——这些看似细碎的步骤，往往决定了当天能否顺畅地完成计划。无论是团队合练还是个人练习，提前理清流程，总能让注意力更集中在运动本身。
+      </p>
+      <p>
+        过去几年里，越来越多运动爱好者开始留意场馆的服务细节、线上预约规则以及临时变动通知。与其临时寻找信息，不如在出发前花几分钟确认关键环节。这也是为什么我们整理了几条容易被忽略的提醒。
+      </p>
+    </div>
+
+    <!-- 特点列表（从简明提醒角度） -->
+    <div class="features">
+      <h2>几条值得留意的细节</h2>
+      <div class="feature-grid">
+        <div class="feature-item">
+          <strong>场地状态与时段</strong>
+          <p>不同时段可用场地数量、灯光条件以及是否预留了热身区域，通常会在日间和晚间有所区别。提前查看实时状态，能避免抵达后临时调整计划。</p>
+        </div>
+        <div class="feature-item">
+          <strong>预约确认与变更</strong>
+          <p>提交预约后，建议检查是否收到确认通知；如需改期或取消，了解截止时间与操作路径，以免影响后续安排。</p>
+        </div>
+        <div class="feature-item">
+          <strong>装备与储物</strong>
+          <p>部分场馆对球类、护具或鞋类有特定要求，储物柜的可用数量也时常变化。行前核对这些小项，能节省不少现场时间。</p>
+        </div>
+        <div class="feature-item">
+          <strong>临时通知与公告</strong>
+          <p>场馆维护、赛事占用或特殊天气调整，都会通过官方渠道发布。养成出发前扫一眼公告的习惯，比到了现场再折返更轻松。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 温和结尾 + 访问提醒（自然嵌入链接） -->
+    <div class="closing">
+      <p>
+        以上这些细节，其实都可以在对应的服务页面里找到更具体的说明。每个人的运动习惯不同，但提前掌握信息这件事，对谁都一样实用。
+      </p>
+      <p>
+        如果你正在寻找一个集中了解场地、预约流程以及常见问题的地方，不妨去 <a href="https://site-mgsports.com">满冠体育</a> 的页面里看看。那里的内容整理得比较清楚，无论是新手还是常客，都能快速找到自己需要的部分。
+      </p>
+      <div class="reminder">
+        <strong>一个小提醒：</strong> 访问时留意页面顶部或底部的更新日期，部分场馆信息可能会随季节或活动调整。另外，如果遇到预约系统维护时段，可以稍后再试，通常很快会恢复。
+      </div>
+    </div>
+
+    <!-- 极简脚注 -->
+    <div class="footer-note">
+      <span>内容仅供参考，具体安排以现场或官方最新公告为准。</span>
+      <span>—— 保持自然，保持准备。</span>
+    </div>
+  </div>
+</body>
+</html>
